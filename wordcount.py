@@ -1,31 +1,6 @@
-# def list_of_words(file):
-
-#     list_words = []
-
-#     with open(file) as text_file:
-#         for line in text_file:
-
-#             line = line.rstrip()
-#             words =line.split()
-
-#             list_words.append(words)
-#     return list_words
-
-# print(list_of_words("test.txt"))
-
-
-# def num_words(words):
-
-#     word_count = {}
-
-#     for word in words:
-#         word_count[word] = word_count.get(word, 0) +1
-
-#     return word_count
 
 def list_of_words(file):
-"""opens the file and counts how many spaces"""
-    list_words = []
+    word_count = {}
 
     file = open(file)
 
@@ -34,31 +9,20 @@ def list_of_words(file):
         line = line.rstrip()
         words =line.split()
 
-        list_words.append(words)
+        for word in words:
+            word_count[word] = word_count.get(word, 0) + 1
 
-    return list_words
-
-# print(list_of_words("test.txt"))
-
+    return word_count
 
 
-def poem(words):
-""" Separates the words by space"""
+def print_the_words(word_dict):
 
-#made my list a dictionary to access it later
-    word_count = {}
-
-#I want to do a for loop of my 
-    for word in words:
-        word_count[word] = word_count.get(word, 0) +1
-
-    return words_count
-
-
-def print_the_words(num_words):
-""" Print the words"""
-    for word, count in num_words.items()
+    for word, count in word_dict.items():
         print(word, count)
+
+word_count = list_of_words("test.txt")
+
+print_the_words(word_count)
 
 
 
